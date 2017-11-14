@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>ful</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<base href='file:\\\C:\Users\Lannister\Desktop\新建文件夹\'/>
+</head>
+<body>
+<h1>分工</h1>
+<p>陈杨天昊：模型制作、报告编写以及分析模型运行数据<br>
+刘东杰：分析实验指导书详细步骤以及逻辑关联，指导实验顺利完成</p>
+<h1>实验一</h1>
+<ul>
+<li>
+<p>Witness系统界面的构成：标题栏,菜单栏,工具栏,元素列表窗口,状态栏,用户元素窗口,系统布局区,每一部分的功能如表所示<Br></p>
+<table>
+<thead>
+<tr>
+	<th align="center">名称</th>
+	<th align="center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">标题栏</td>
+	<td align="center">显示当前运行的模型的名称</td>
+</tr>
+<tr>
+	<td align="center">菜单栏</td>
+	<td align="center">对模型的全部操作以及调整整个程序的视图</td>
+</tr>
+<tr>
+	<td align="center">工具栏</td>
+	<td align="center">对模型的一些常用快捷操作</td>
+</tr>
+<tr>
+	<td align="center">元素列表窗口</td>
+	<td align="center">显示当前模型中存在的元素</td>
+</tr>
+<tr>
+	<td align="center">状态栏</td>
+	<td align="center">显示某一时刻的工作状态或者鼠标位置</td>
+</tr>
+<tr>
+	<td align="center">用户元素窗口</td>
+	<td align="center">显示建模时要用到的基本元素</td>
+</tr>
+<tr>
+	<td align="center">系统布局区</td>
+	<td align="center">建模的可视化结果</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Witness仿真模型所必须的五类元素<br></p>
+<table>
+<thead>
+<tr>
+	<th align="center">名称</th>
+	<th align="center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">离散型元素</td>
+	<td align="center">用来表示所要研究的现实系统中可以看得见的、可以计量个数的物体</td>
+</tr>
+<tr>
+	<td align="center">连续型元素</td>
+	<td align="center">素用来表示加工或服务对象是流体的系统</td>
+</tr>
+<tr>
+	<td align="center">运输逻辑型元素</td>
+	<td align="center">用于构建物料运输系统</td>
+</tr>
+<tr>
+	<td align="center">逻辑元素</td>
+	<td align="center">用来处理数据、定制报表、建立复杂逻辑结构的元素</td>
+</tr>
+<tr>
+	<td align="center">图形元素</td>
+	<td align="center">将模型的运行绩效指标在仿真窗口形象地表现出来</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h1>实验二</h1>
+<h2>阶段一</h2>
+<h3>1. 定义模型元素</h3>
+<table>
+<thead>
+<tr>
+	<th align="center">元素名称</th>
+	<th align="center">类型</th>
+	<th align="center">数量</th>
+	<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">Widget</td>
+	<td align="center">Part</td>
+	<td align="center">1</td>
+	<td align="center">原始零件</td>
+</tr>
+<tr>
+	<td align="center">Weigh</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">称重工序</td>
+</tr>
+<tr>
+	<td align="center">C1</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 详细定义步骤</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/Widget.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/Weigh.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/C1.png" /></p>
+<h3>3. 建立逻辑规则</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/input%20rule%20for%20weigh.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/output%20rule%20for%20weigh.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/C1_ship.png" /></p>
+<h3>4. 运行结果与分析</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase1/statistics.png" /></p>
+<ul>
+<li>由数据可知，机器Weigh共加工完成了20个零件</li>
+</ul>
+<h2>阶段二</h2>
+<h3>1. 定义模型元素</h3>
+<table>
+<thead>
+<tr>
+	<th align="center">元素名称</th>
+	<th align="center">类型</th>
+	<th align="center">数量</th>
+	<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">Widget</td>
+	<td align="center">Part</td>
+	<td align="center">1</td>
+	<td align="center">原始零件</td>
+</tr>
+<tr>
+	<td align="center">Weigh</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">称重工序</td>
+</tr>
+<tr>
+	<td align="center">Wash</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">清洗工序</td>
+</tr>
+<tr>
+	<td align="center">Produce</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">加工工序</td>
+</tr>
+<tr>
+	<td align="center">Inspect</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">检测工序</td>
+</tr>
+<tr>
+	<td align="center">C1</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C2</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C3</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">Output</td>
+	<td align="center">Vinteger</td>
+	<td align="center">1</td>
+	<td align="center">逻辑元素<br>动态显示模型中加工完成的小零件的数量</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 详细定义步骤</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Wash.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/C2.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Produce.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/C3.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Inspect.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Output.png" /><br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Varible%20detail.png" /></p>
+<h3>3. 建立逻辑规则</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Output%20rule%20for%20C1.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Output%20rule%20for%20Wash.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Input%20rule%20for%20Produce.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Output%20rule%20for%20Produce.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Input%20rule%20for%20Inspect.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Output%20rule%20for%20Inspect.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Display%20key.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Display%20states.png" /></p>
+<h3>4. 运行结果与分析</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/statistics.png" /></p>
+<ul>
+<li>由数据可知，称重工序忙碌率为100%，满负荷运转，所以它是当前运行的“瓶颈”</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase2/Widget%20statistics.png" /></p>
+<ul>
+<li>Widget产生的数据如上图所示</li>
+</ul>
+<h2>阶段三</h2>
+<h3>1. 定义模型元素</h3>
+<table>
+<thead>
+<tr>
+	<th align="center">元素名称</th>
+	<th align="center">类型</th>
+	<th align="center">数量</th>
+	<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">Widget</td>
+	<td align="center">Part</td>
+	<td align="center">1</td>
+	<td align="center">原始零件</td>
+</tr>
+<tr>
+	<td align="center">Weigh</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">称重工序</td>
+</tr>
+<tr>
+	<td align="center">Wash</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">清洗工序</td>
+</tr>
+<tr>
+	<td align="center">Produce</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">加工工序</td>
+</tr>
+<tr>
+	<td align="center">Inspect</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">检测工序</td>
+</tr>
+<tr>
+	<td align="center">C1</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C2</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C3</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">Output</td>
+	<td align="center">Vinteger</td>
+	<td align="center">1</td>
+	<td align="center">逻辑元素<br>动态显示模型中加工完成的小零件的数量</td>
+</tr>
+<tr>
+	<td align="center">Operator</td>
+	<td align="center">Labor</td>
+	<td align="center">1</td>
+	<td align="center">对加工工序进行刀具调整</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 详细定义步骤</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/Labor.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/ProduceAddRemove.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/MachineSetup.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/LaborRule.png" /></p>
+<h3>3. 运行结果与分析</h3>
+<ul>
+<li>机器运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/MachineStatistics.png" /></li>
+<li>输送链运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/ConveyorStatistics.png" /></li>
+<li>劳动者运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/OperatorStatistics.png" /></li>
+<li>零件运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase3/WidgetStatistics.png" /></li>
+<li>分析：通过以上数据可知，称重环节还是处于满负载，因此“瓶颈”仍是称重环节，同时输送链C1移动（忙碌）率为95%，因此在某种程度上来说也是一个“瓶颈”</li>
+</ul>
+<h2>阶段四</h2>
+<h3>1. 定义模型元素</h3>
+<table>
+<thead>
+<tr>
+	<th align="center">元素名称</th>
+	<th align="center">类型</th>
+	<th align="center">数量</th>
+	<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">Widget</td>
+	<td align="center">Part</td>
+	<td align="center">1</td>
+	<td align="center">原始零件</td>
+</tr>
+<tr>
+	<td align="center">Weigh</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">称重工序</td>
+</tr>
+<tr>
+	<td align="center">Wash</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">清洗工序</td>
+</tr>
+<tr>
+	<td align="center">Produce</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">加工工序</td>
+</tr>
+<tr>
+	<td align="center">Inspect</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">检测工序</td>
+</tr>
+<tr>
+	<td align="center">C1</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C2</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C3</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">Output</td>
+	<td align="center">Vinteger</td>
+	<td align="center">1</td>
+	<td align="center">逻辑元素<br>动态显示模型中加工完成的小零件的数量</td>
+</tr>
+<tr>
+	<td align="center">Operator</td>
+	<td align="center">Labor</td>
+	<td align="center">1</td>
+	<td align="center">对加工工序进行刀具调整</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 详细定义步骤</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/ProduceAddRemoveBreakdowns.png" /><br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/ProduceBreakdownsLabor.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/ProduceBreakdowns.png" /></p>
+<h3>3. 运行结果与分析</h3>
+<ul>
+<li>机器运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/MachineStatistics.png" /></li>
+<li>输送链运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/ConveyorStatistics.png" /></li>
+<li>劳动者运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/LaborStatistics.png" /></li>
+<li>零件运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase4/WidgetStatistics.png" /></li>
+<li>
+分析：通过对比阶段四和阶段三的运行数据，可发现几点变化
+<ol>
+<li>在机器运行方面，加工工序开始有了随机机器故障率（7.8%），因此机器的维修率对比阶段四有了明显的增加（从24%到37.4%），故机器的空闲率有了明显的下降（从34%到6.8%）；检查工序的忙碌率有了明显的增长（从30%到46.8%）</li>
+<li>在输送链运行方面，阶段四和阶段五基本无变化</li>
+<li>在劳动者运行方面，劳动者的忙碌率增加量近乎一倍（从24%到45.2%），这是因为机器有了随机故障率，需要劳动者进行维修</li>
+<li>在零件运行方面，平均在制品库存（Avg W.I.P）增加了一倍（从7.15到14.07），平均逗留时间（Avg Time）增加了一倍（从34.05到69.65）</li>
+</ol>
+</li>
+</ul>
+<h2>阶段五</h2>
+<h3>1. 定义模型元素</h3>
+<table>
+<thead>
+<tr>
+	<th align="center">元素名称</th>
+	<th align="center">类型</th>
+	<th align="center">数量</th>
+	<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">Widget</td>
+	<td align="center">Part</td>
+	<td align="center">1</td>
+	<td align="center">原始零件</td>
+</tr>
+<tr>
+	<td align="center">Weigh</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">称重工序</td>
+</tr>
+<tr>
+	<td align="center">Wash</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">清洗工序</td>
+</tr>
+<tr>
+	<td align="center">Produce</td>
+	<td align="center">Machine</td>
+	<td align="center">2</td>
+	<td align="center">加工工序</td>
+</tr>
+<tr>
+	<td align="center">Inspect</td>
+	<td align="center">Machine</td>
+	<td align="center">1</td>
+	<td align="center">检测工序</td>
+</tr>
+<tr>
+	<td align="center">C1</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C2</td>
+	<td align="center">Converyor</td>
+	<td align="center">2</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">C3</td>
+	<td align="center">Converyor</td>
+	<td align="center">1</td>
+	<td align="center">输送链</td>
+</tr>
+<tr>
+	<td align="center">Output</td>
+	<td align="center">Vinteger</td>
+	<td align="center">1</td>
+	<td align="center">逻辑元素<br>动态显示模型中加工完成的小零件的数量</td>
+</tr>
+<tr>
+	<td align="center">Operator</td>
+	<td align="center">Labor</td>
+	<td align="center">1</td>
+	<td align="center">对加工工序进行刀具调整</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 详细定义步骤</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/Produce.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/C2.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/ProducePullFrom.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/WashPushTo.png" /></p>
+<h3>3. 运行结果与分析</h3>
+<ul>
+<li>机器运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/MachineStatistics.png" /></li>
+<li>输送链运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/ConveyorStatistics.png" /></li>
+<li>劳动者运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/OperatorStatistics.png" /></li>
+<li>零件运行数据统计<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase5/WidgetStatistics.png" /></li>
+<li>
+分析：通过对比阶段五和阶段四的运行数据，可发现几点变化
+<ol>
+<li>在机器运行方面，由于阶段五的加工机器从一台增加到了两台，两台加工机器交替工作，故阶段五中加工机器的空闲率较阶段四都有所提高，忙碌率都有所下降；同时由于是两台机器交替工作，故阶段四中的加工机器的故障率在阶段五中均摊到了两台加工机器中，继而导致维修率也分摊到了两台机器上；加工工序的操作总数也有了增加</li>
+<li>在输送链运行方面，由于增加了一条C2输送链，C2输送链的排队率有了非常明显降低（从88.2%到21%（两台输送链平均）），同时忙碌率也有了非常明显的提升（从9%到65%）</li>
+<li>在劳动者运行方面，阶段五与阶段四相差无几</li>
+<li>在零件运行方面，阶段五与阶段四相差无几</li>
+</ol>
+</li>
+</ul>
+<h2>阶段六</h2>
+<h3>1. 主要设置步骤</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase6/Widget20.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase6/Widget30.png" /></p>
+<h3>2. 运行结果与分析</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase6/Widget20Statistics.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/phrase6/Widget30Statistics.png" /></p>
+<ul>
+<li>分析：通过对比零件产出量在不同维修时间均值下的变化，可以发现零件产出量变化很小</li>
+</ul>
+<h2>思考题</h2>
+<h3>1. 生产线的主要特点是什么？</h3>
+<ul>
+<li>答:本模型中生产线的主要特点是运行不平衡，往往有1，2个瓶颈会限制整个系统的优化。</li>
+</ul>
+<h3>2. 流水线是否有缺点，为什么？</h3>
+<ul>
+<li>答：流水线有其自身的缺陷，主要是没有柔性、对产品的把握不够、信息反馈慢等。</li>
+</ul>
+<h1>实验三</h1>
+<h2>定义与可视化模型元素</h2>
+<h3>1. 修改模型窗口名称<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/bg.png" /></p>
+<h3>2. 定义和可视化货架(shelf1,shelf2,shelf3,shelf4)<Br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/shelf14.png" /></p>
+<h3>3. 定义和可视化堆垛机(stack_machineA,stack_machineB)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/StackMachine.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/StackMachineIconpng.png" /></p>
+<h3>4. 定义和可视化轨道(trackA1,trackA2,trackB1,trackB2)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/trackA1.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/trackgraph.png" /></p>
+<h3>5. 定义和可视化缓冲器(buffers001,buffers002)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/DefineBuffer.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/buffer001.png" /></p>
+<h3>6. 定义分配输送链(conveyor)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/conveyor1.png" /></p>
+<h3>7. 定义托盘(pallet)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/pallet.png" /></p>
+<h3>8. 定义变量(total_storages,number_hgt12)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/vinteger.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/totalss.png" /></p>
+<h3>9. 布局样式</h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step1/layout.png" /></p>
+<h2>详细定义模型元素</h2>
+<h3>1. 详细定义堆垛机(stack_machineA,stack_machineB)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/stack_machineAdetail.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/stack_machineAoutput.png" /></p>
+<h3>2. 详细定义货架(shelf1,shelf2,shelf3,shelf4)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/shelf1detail.png" /></p>
+<h3>3. 详细定义(trackA1,trackA2,trackB1和trackB2)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/trackAgeneral.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/generaloutput.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/trackAunloading.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/trackAoutput.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/totalstorage.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/trackAloading.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/trackAinput.png" /></p>
+<h3>4. 详细定义(buffers001,buffers002)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/buffers001.png" /></p>
+<h3>5. 详细定义输送链(conveyor1,onveyor2)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/conveyor1.png" />
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/conveyor1output.png" /></p>
+<h3>6. 详细定义part元素(pallet)<br></h3>
+<p><img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step2/pallet.png" /></p>
+<h2>运行模型与统计分析</h2>
+<h3>1. 各元素的运行参数</h3>
+<ul>
+<li>shelfs<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step3/statshelf.png" /></li>
+<li>buffers<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step3/statbuffers.png" /></li>
+<li>conveyors<Br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step3/statconvey.png" /></li>
+<li>tracks<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step3/stattrack.png" /></li>
+<li>stackmachines<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step3/statstackmachine.png" /></li>
+<li>pallet<br>
+<img src="https://raw.githubusercontent.com/freeemann/Exercise2/master/step3/statpallet.png" /></li>
+</ul>
+<h3>2. material的平均入库时间<br></h3>
+<ul>
+<li>通过上图中的shelfs的统计数据可知每一个shelf的平均时间，故可算出marterial的平均入库时间为(512098.3+482511.1+509048.1+537699.0)/4=510339.1</li>
+</ul>
+<h1>思考题</h1>
+<h3>1. 物流仓储系统的主要功能与组成？<br></h3>
+<ul>
+<li>答：物流仓储系统的主要功能是管理企业库存，根据企业的生产销售情况制定合理的库存，使得企业利益最大化；其组成主要是机械设备、技术条件、操作人员、管理体系等。</li>
+</ul>
+<h3>2. 你认为在设计物流仓储系统时，最关键的问题有哪些？<br></h3>
+<ul>
+<li>答：我认为最最关键的问题有:企业目前的生产能力状况、库存规模、技术条件和实施成本等。</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
